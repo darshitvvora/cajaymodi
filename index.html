@@ -287,7 +287,8 @@ Board Meeting & Annual General Meeting Compliances.
 							<textarea name="message" id="message" class="form-control" cols="30" rows="7" placeholder="Message"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary">
+							<button onclick="sendPrefilledEmail()">Send Message</button>
+
 						</div>
 					</form>
 				</div>
@@ -348,6 +349,21 @@ Board Meeting & Annual General Meeting Compliances.
 	<script src="js/magnific-popup-options.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+		<script>
+function sendPrefilledEmail() {
+  const email = "office@cajaymodi.co.in";
+  
+  // Grab the text the user typed
+  const subject = document.getElementById("email").value + " " + document.getElementById("name").value;
+  const body = document.getElementById("message").value;
+  
+  // Use encodeURIComponent to handle spaces and line breaks automatically
+  const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  
+  // Trigger the email client
+  window.location.href = mailtoUrl;
+}
+</script>
 
 	</body>
 </html>
