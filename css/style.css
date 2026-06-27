@@ -21,10 +21,10 @@ body {
 
 /* CA logo in header */
 .ca-logo {
-  height: 36px;
+  height: 56px;
   display: inline-block;
   vertical-align: middle;
-  margin-right: 8px;
+  margin-right: -10px; /* slight overlap to merge with text */
 }
 
 #gtco-logo a {
@@ -52,6 +52,52 @@ body {
   -o-transition: 2s;
   transition: 2s;
   position: absolute;
+
+/* Header: white background with navy-blue brand text per ICAI guidelines */
+.gtco-nav {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(11,79,118,0.06);
+}
+
+.gtco-nav #gtco-logo a {
+  color: #0b4f76; /* ICAI navy */
+}
+
+.gtco-nav ul li a {
+  color: #0b4f76;
+}
+
+.gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
+  color: #063a55;
+}
+
+/* Logo and firm name merged styling */
+.ca-logo {
+  height: 56px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -12px;
+}
+
+.firm-name {
+  color: #0b4f76;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -10px; /* slight overlap to "merge" with logo */
+  letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 1024px) {
+  .ca-logo { height: 48px; }
+  .firm-name { font-size: 16px; margin-left: -8px; }
+}
+
+@media screen and (max-width: 480px) {
+  .ca-logo { height: 40px; margin-right: -6px; }
+  .firm-name { font-size: 15px; margin-left: -4px; }
+}
   top: 0;
   right: 0;
   bottom: 0;
